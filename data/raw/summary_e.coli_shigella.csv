@@ -1,0 +1,208 @@
+"ST_Country","N_human_e.coli_shigella","N_non_HumanHost","N_bovine_e.coli_shigella","N_swine_e.coli_shigella","N_poultry_e.coli_shigella","N_dog_e.coli_shigella","N_water_e.coli_shigella","is_ST131"
+"10_Australia",114,77,0,46,6,6,19,NA
+"10_Canada",71,96,47,4,31,3,11,NA
+"10_China",96,83,8,66,5,0,4,NA
+"10_Denmark",139,91,3,39,49,0,0,NA
+"10_Ecuador",55,65,1,23,17,16,8,NA
+"10_France",122,71,54,1,7,2,7,NA
+"10_Germany",78,229,55,117,19,7,31,NA
+"10_Japan",29,104,13,1,17,0,73,NA
+"10_Netherlands",196,51,21,10,20,0,0,NA
+"10_Spain",90,78,8,33,21,0,16,NA
+"10_United Kingdom",788,262,29,130,78,2,23,NA
+"10_United States",331,1923,747,647,423,53,53,NA
+"101_United Kingdom",48,68,4,34,24,0,6,NA
+"101_United States",40,538,181,177,140,8,32,NA
+"1025_United Kingdom",123,0,0,0,0,0,0,NA
+"11_Australia",259,18,18,0,0,0,0,NA
+"11_Belgium",40,3,3,0,0,0,0,NA
+"11_Canada",324,306,221,75,0,0,10,NA
+"11_France",320,2,2,0,0,0,0,NA
+"11_Japan",360,5,4,1,0,0,0,NA
+"11_Netherlands",152,43,43,0,0,0,0,NA
+"11_New Zealand",77,82,80,1,0,0,1,NA
+"11_United Kingdom",6729,148,142,0,0,0,6,NA
+"11_United States",593,3813,3068,89,1,1,654,NA
+"117_Australia",10,97,0,3,88,6,0,NA
+"117_Japan",10,124,0,1,112,0,11,NA
+"117_United Kingdom",28,130,1,42,85,0,2,NA
+"117_United States",27,845,84,61,687,7,6,NA
+"1193_Australia",318,10,0,0,0,10,0,NA
+"1193_Japan",198,11,0,0,0,0,11,NA
+"1193_United States",425,28,0,0,0,25,3,NA
+"12_United Kingdom",124,28,0,0,0,24,4,NA
+"12_United States",247,188,3,13,4,153,15,NA
+"127_United States",318,186,2,1,0,168,15,NA
+"131_Australia",1195,33,0,1,1,26,5,"131"
+"131_Canada",1243,47,0,0,29,10,8,"131"
+"131_China",144,2,0,0,1,1,0,"131"
+"131_France",601,60,0,0,0,50,10,"131"
+"131_Germany",283,46,1,5,12,19,9,"131"
+"131_Japan",1773,100,0,0,10,1,89,"131"
+"131_Netherlands",473,7,3,0,0,4,0,"131"
+"131_New Zealand",236,9,0,0,0,6,3,"131"
+"131_Norway",149,4,0,0,4,0,0,"131"
+"131_Singapore",188,0,0,0,0,0,0,"131"
+"131_Spain",210,84,4,17,17,2,44,"131"
+"131_Sweden",203,19,0,0,13,0,6,"131"
+"131_Switzerland",262,2,0,1,0,0,1,"131"
+"131_Thailand",135,2,0,0,0,1,1,"131"
+"131_United Kingdom",1073,45,0,11,2,6,26,"131"
+"131_United States",2591,411,1,36,237,112,25,"131"
+"141_France",104,8,0,1,0,6,1,NA
+"141_United States",58,64,0,1,28,33,2,NA
+"1434_United States",2,104,54,45,4,1,0,NA
+"145_France",243,0,0,0,0,0,0,NA
+"145_United Kingdom",362,0,0,0,0,0,0,NA
+"148_United Kingdom",155,0,0,0,0,0,0,NA
+"152_Australia",686,0,0,0,0,0,0,NA
+"152_Belgium",496,0,0,0,0,0,0,NA
+"152_Canada",235,0,0,0,0,0,0,NA
+"152_China",239,0,0,0,0,0,0,NA
+"152_France",4358,0,0,0,0,0,0,NA
+"152_India",151,0,0,0,0,0,0,NA
+"152_Ireland",105,0,0,0,0,0,0,NA
+"152_Israel",308,0,0,0,0,0,0,NA
+"152_Netherlands",133,0,0,0,0,0,0,NA
+"152_South Africa",251,0,0,0,0,0,0,NA
+"152_United Kingdom",4857,0,0,0,0,0,0,NA
+"152_United States",939,0,0,0,0,0,0,NA
+"152_Vietnam",265,0,0,0,0,0,0,NA
+"154_United States",7,257,181,20,23,6,27,NA
+"155_United Kingdom",43,45,16,4,14,1,10,NA
+"155_United States",26,592,135,53,361,22,21,NA
+"16_United States",196,177,161,6,1,0,9,NA
+"162_United States",51,372,105,30,150,67,20,NA
+"164_United States",3,132,120,6,5,0,1,NA
+"167_United States",400,101,16,0,0,83,2,NA
+"17_France",104,0,0,0,0,0,0,NA
+"17_United Kingdom",442,0,0,0,0,0,0,NA
+"17_United States",269,413,385,23,0,0,5,NA
+"189_United States",1,130,14,5,110,1,0,NA
+"19_France",3,0,0,0,0,0,0,NA
+"1967_United States",33,104,101,0,0,0,3,NA
+"200_United Kingdom",154,1,0,0,0,0,1,NA
+"205_United States",7,168,108,20,0,0,40,NA
+"206_United States",2,182,107,38,16,3,18,NA
+"21_Belgium",29,7,7,0,0,0,0,NA
+"21_France",532,1,1,0,0,0,0,NA
+"21_Japan",154,20,20,0,0,0,0,NA
+"21_United Kingdom",1412,80,80,0,0,0,0,NA
+"21_United States",360,526,435,18,0,0,73,NA
+"223_United States",4,113,77,5,9,0,22,NA
+"224_United States",50,116,30,21,23,38,4,NA
+"23_United States",7,382,54,51,271,4,2,NA
+"243_United Kingdom",167,0,0,0,0,0,0,NA
+"245_Australia",157,0,0,0,0,0,0,NA
+"245_Bangladesh",104,0,0,0,0,0,0,NA
+"245_Canada",100,0,0,0,0,0,0,NA
+"245_France",2363,0,0,0,0,0,0,NA
+"245_South Africa",151,0,0,0,0,0,0,NA
+"245_United Kingdom",4084,0,0,0,0,0,0,NA
+"245_United States",180,0,0,0,0,0,0,NA
+"25_United Kingdom",290,0,0,0,0,0,0,NA
+"29_France",62,0,0,0,0,0,0,NA
+"29_United Kingdom",227,22,21,1,0,0,0,NA
+"29_United States",13,157,133,17,5,0,2,NA
+"295_United States",7,93,34,9,39,2,9,NA
+"297_United States",28,369,147,15,81,72,54,NA
+"3_France",4,0,0,0,0,0,0,NA
+"300_United Kingdom",143,0,0,0,0,0,0,NA
+"301_France",353,2,2,0,0,0,0,NA
+"306_United States",2,110,100,1,1,0,8,NA
+"3101_United Kingdom",119,0,0,0,0,0,0,NA
+"32_Japan",89,4,4,0,0,0,0,NA
+"32_United Kingdom",368,1,1,0,0,0,0,NA
+"32_United States",58,219,203,9,0,0,7,NA
+"329_United States",1,192,177,7,0,0,8,NA
+"33_United Kingdom",622,0,0,0,0,0,0,NA
+"335_United Kingdom",109,0,0,0,0,0,0,NA
+"34_United Kingdom",191,12,0,9,0,1,2,NA
+"34_United States",5,126,27,59,30,2,8,NA
+"345_United States",10,138,50,31,52,4,1,NA
+"349_United States",56,114,20,8,62,17,7,NA
+"355_United States",7,187,1,1,182,2,1,NA
+"3580_United States",1,247,2,3,237,3,2,NA
+"361_United States",176,45,17,7,3,9,9,NA
+"362_United States",37,71,24,4,29,7,7,NA
+"372_United States",117,410,1,2,3,391,13,NA
+"38_Australia",255,10,0,0,1,9,0,NA
+"38_Canada",85,34,1,0,28,3,2,NA
+"38_France",79,18,0,0,5,1,12,NA
+"38_Japan",144,53,1,0,7,0,45,NA
+"38_Netherlands",123,6,5,0,1,0,0,NA
+"38_Norway",90,52,0,0,52,0,0,NA
+"38_United Kingdom",164,36,11,2,9,2,12,NA
+"38_United States",266,230,27,2,159,30,12,NA
+"381_United Kingdom",109,0,0,0,0,0,0,NA
+"399_United States",24,144,42,52,27,0,23,NA
+"40_United Kingdom",163,3,0,0,2,0,1,NA
+"404_United States",102,1,0,0,0,0,1,NA
+"405_Australia",106,3,0,0,0,3,0,NA
+"405_Canada",94,3,0,0,0,1,2,NA
+"405_United States",340,17,0,1,0,11,5,NA
+"410_China",158,24,0,13,1,0,10,NA
+"410_Thailand",133,1,0,1,0,0,0,NA
+"410_United States",217,90,24,39,6,20,1,NA
+"428_United States",9,168,1,3,158,3,3,NA
+"429_United States",3,98,0,1,96,1,0,NA
+"442_United Kingdom",702,3,0,2,0,0,1,NA
+"457_United States",36,93,3,6,60,22,2,NA
+"48_China",58,42,1,24,9,2,6,NA
+"48_United States",13,259,27,68,157,6,1,NA
+"504_United Kingdom",123,0,0,0,0,0,0,NA
+"517_United Kingdom",107,1,1,0,0,0,0,NA
+"5288_South Africa",133,0,0,0,0,0,0,NA
+"540_United States",14,130,29,29,67,1,4,NA
+"56_United States",9,152,118,24,1,5,4,NA
+"58_Germany",24,92,21,28,5,10,28,NA
+"58_United Kingdom",47,80,5,60,5,1,9,NA
+"58_United States",59,1244,564,199,399,26,56,NA
+"583_United Kingdom",108,2,0,0,0,2,0,NA
+"59_United States",163,2,0,0,0,1,1,NA
+"6_United Kingdom",119,0,0,0,0,0,0,NA
+"602_United States",4,143,21,4,107,8,3,NA
+"617_United States",75,29,11,1,0,15,2,NA
+"635_United Kingdom",10,119,0,0,0,0,119,NA
+"641_United States",16,266,46,161,29,7,23,NA
+"648_Australia",130,6,0,0,0,6,0,NA
+"648_Canada",86,8,3,0,4,1,0,NA
+"648_United States",248,93,26,8,40,17,2,NA
+"655_Japan",192,4,3,0,0,0,1,NA
+"655_United States",70,66,48,5,0,0,13,NA
+"657_United States",7,100,67,10,5,1,17,NA
+"675_United Kingdom",189,0,0,0,0,0,0,NA
+"679_United States",1,281,254,8,3,0,16,NA
+"69_Australia",145,32,0,4,27,0,1,NA
+"69_Canada",99,23,11,1,5,3,3,NA
+"69_Denmark",136,8,0,1,7,0,0,NA
+"69_France",122,18,14,0,0,3,1,NA
+"69_Japan",88,44,0,0,13,0,31,NA
+"69_Switzerland",145,14,14,0,0,0,0,NA
+"69_United Kingdom",263,40,3,5,11,1,20,NA
+"69_United States",549,343,92,11,200,24,16,NA
+"718_United States",3,262,223,2,0,0,37,NA
+"73_Australia",133,30,0,0,0,30,0,NA
+"73_Canada",122,26,0,0,0,26,0,NA
+"73_Denmark",147,0,0,0,0,0,0,NA
+"73_Germany",91,4,2,1,0,0,1,NA
+"73_Japan",370,17,0,0,0,0,17,NA
+"73_Switzerland",125,0,0,0,0,0,0,NA
+"73_United Kingdom",347,32,0,1,0,15,16,NA
+"73_United States",616,218,18,15,15,149,21,NA
+"738_United Kingdom",114,0,0,0,0,0,0,NA
+"744_United Kingdom",15,145,1,138,0,3,3,NA
+"744_United States",65,120,29,29,31,21,10,NA
+"88_United Kingdom",36,95,18,58,6,4,9,NA
+"88_United States",39,367,165,140,56,2,4,NA
+"90_United States",18,248,3,232,1,12,0,NA
+"906_United States",4,183,68,20,79,4,12,NA
+"93_United States",16,128,6,48,71,2,1,NA
+"95_Australia",153,73,0,0,63,6,4,NA
+"95_Belgium",23,126,0,0,126,0,0,NA
+"95_Canada",154,5,1,0,0,4,0,NA
+"95_Denmark",112,26,0,0,26,0,0,NA
+"95_Japan",129,44,2,0,1,0,41,NA
+"95_United Kingdom",208,44,1,0,30,1,12,NA
+"95_United States",626,138,36,2,63,25,12,NA
+"998_United States",59,81,1,2,1,75,2,NA

@@ -1,0 +1,500 @@
+---
+title: "E. coli phylogenetic trees"
+author: "Nhung"
+date: "2025-08-06"
+output: pdf_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(ggtreeExtra)
+library(ggtree)
+library(ggplot2)
+library(ggnewscale)
+library(treeio)
+library(tidytree)
+library(dplyr)
+library(ggstar)
+library(TDbook)
+
+```
+## The phylogenetic tree of ST10AUS rooted by 5 seq of ST93
+
+
+```{r ST10AUS, include = FALSE}
+# read the tree file and metadata
+rooted_tree_ST10AUS_5outgr <- read.nexus(here::here("data/derived_data/ST10_AUS/rooted_core_tree_ST10AUS_5outgr.treefile"))
+metadata_ST10AUS_5outgr <- read.csv(here::here("data/derived_data/ST10_AUS/metadata_tree_ST10AUS_5outgr.csv"))
+
+all(metadata_ST10AUS_5outgr$assembly_barcode %in% rooted_tree_ST10AUS_5outgr$tip.label)
+
+sourceconvert3 <- function(x, y){  # this function is to create a new var with source of outgr being NA values
+  ifelse(x == 10, y, NA)
+}
+
+metadata_ST10AUS_5outgr <- mutate(metadata_ST10AUS_5outgr,
+                                  source_type2 = sourceconvert3(ST, source_type))
+
+table(metadata_ST10AUS_5outgr$source_type, useNA = "always")
+table(metadata_ST10AUS_5outgr$source_type2, useNA = "always")
+
+testcol <- c("Avian"="#66C2A5", "Canine"="#8DA0CB", "Swine"="#E78AC3", "Poultry"="#A6D854", "Human"="#FFD92F", "Water/River"="#E5C494", "Bovine"="#FC8D62")
+
+
+pST10AUS_5outgr <- ggtree(rooted_tree_ST10AUS_5outgr, layout="fan", open.angle=5, size=0.1)
+pST10AUS_5outgr <- pST10AUS_5outgr %<+% metadata_ST10AUS_5outgr
+
+pST10AUS_5outgr_1 <- pST10AUS_5outgr +
+  geom_fruit(
+    geom=geom_tile,
+    mapping=aes(fill = source_type2),
+    width=0.0009,
+    offset=0.1
+  ) +
+  scale_fill_manual(
+    name="source_ST10AUS",
+    values=testcol,
+    na.translate = FALSE,
+    guide=guide_legend(keywidth=0.3, keyheight=0.3, ncol=2, order=2)
+  ) +
+  theme(
+    legend.title=element_text(size=8), 
+    legend.text=element_text(size=6),
+    legend.spacing.y = unit(0.02, "cm")
+  )
+
+# remove the outgroup from the tree for visualization 
+test <- filter(metadata_ST10AUS_5outgr, is.na(source_type2))
+to_drop <- test$assembly_barcode  # take the tip labels of outgroup
+
+rooted_tree_ST10AUS_5outgr_reduced <- drop.tip(rooted_tree_ST10AUS_5outgr, to_drop)
+metadata_ST10AUS <- read.csv(here::here("data/derived_data/ST10_AUS/metadata_tree_ST10AUS.csv"))
+
+all(metadata_ST10AUS$assembly_barcode %in% rooted_tree_ST10AUS_5outgr_reduced$tip.label)
+
+pST10AUS_5outgr_reduced <- ggtree(rooted_tree_ST10AUS_5outgr_reduced, layout="fan", open.angle=5, size=0.1)
+pST10AUS_5outgr_reduced <- pST10AUS_5outgr_reduced %<+% metadata_ST10AUS
+
+pST10AUS_5outgr_2 <- pST10AUS_5outgr_reduced +
+  geom_fruit(
+    geom=geom_tile,
+    mapping=aes(fill = source_type),
+    width=0.0005,
+    offset=0.1
+  ) +
+  scale_fill_manual(
+    name="source_ST10AUS",
+    values=testcol,
+    na.translate = FALSE,
+    guide=guide_legend(keywidth=0.3, keyheight=0.3, ncol=2, order=2)
+  ) +
+  theme(
+    legend.title=element_text(size=8), 
+    legend.text=element_text(size=6),
+    legend.spacing.y = unit(0.02, "cm")
+  )
+
+```
+
+```{r tree_ST10AUS}
+pST10AUS_5outgr_2
+
+```
+
+## The phylogenetic tree of ST10CAN rooted by 5seq of ST93
+
+
+```{r ST10CAN, include=FALSE}
+# read the tree file and metadata
+rooted_tree_ST10CAN_5outgr <- read.nexus(here::here("data/derived_data/ST10_CAN/rooted_core_tree_ST10CAN_5outgr.treefile"))
+metadata_ST10CAN_5outgr <- read.csv(here::here("data/derived_data/ST10_CAN/metadata_tree_ST10CAN_5outgr.csv"))
+
+all(metadata_ST10CAN_5outgr$assembly_barcode %in% rooted_tree_ST10CAN_5outgr$tip.label)
+
+sourceconvert3 <- function(x, y){  # this function is to create a new var with source of outgr being NA values
+  ifelse(x == 10, y, NA)
+}
+
+metadata_ST10CAN_5outgr <- mutate(metadata_ST10CAN_5outgr,
+                                  source_type2 = sourceconvert3(ST, source_type))
+
+table(metadata_ST10CAN_5outgr$source_type, useNA = "always")
+table(metadata_ST10CAN_5outgr$source_type2, useNA = "always")
+
+testcol <- c("Avian"="#66C2A5", "Canine"="#8DA0CB", "Swine"="#E78AC3", "Poultry"="#A6D854", "Human"="#FFD92F", "Water/River"="#E5C494", "Bovine"="#FC8D62")
+
+pST10CAN_5outgr <- ggtree(rooted_tree_ST10CAN_5outgr, layout="fan", open.angle=5, size=0.1)
+pST10CAN_5outgr <- pST10CAN_5outgr %<+% metadata_ST10CAN_5outgr
+
+pST10CAN_5outgr_1 <- pST10CAN_5outgr +
+  geom_fruit(
+    geom=geom_tile,
+    mapping=aes(fill = source_type2),
+    width=0.0009,
+    offset=0.1
+  ) +
+  scale_fill_manual(
+    name="source_ST10CAN",
+    values=testcol,
+    na.translate = FALSE,
+    guide=guide_legend(keywidth=0.3, keyheight=0.3, ncol=2, order=2)
+  ) +
+  theme(
+    legend.title=element_text(size=8), 
+    legend.text=element_text(size=6),
+    legend.spacing.y = unit(0.02, "cm")
+  )
+
+# remove the outgroup from the tree for visualization 
+to_drop_ST10CAN <- (filter(metadata_ST10CAN_5outgr, is.na(source_type2)))$assembly_barcode
+rooted_tree_ST10CAN_5outgr_reduced <- drop.tip(rooted_tree_ST10CAN_5outgr, to_drop_ST10CAN)
+metadata_ST10CAN <- read.csv(here::here("data/derived_data/ST10_CAN/metadata_tree_ST10CAN.csv"), sep = ",")
+
+all(metadata_ST10CAN$assembly_barcode %in% rooted_tree_ST10CAN_5outgr_reduced$tip.label)
+
+pST10CAN_5outgr_reduced <- ggtree(rooted_tree_ST10CAN_5outgr_reduced, layout="fan", open.angle=5, size=0.1)
+pST10CAN_5outgr_reduced <- pST10CAN_5outgr_reduced %<+% metadata_ST10CAN
+
+pST10CAN_5outgr_2 <- pST10CAN_5outgr_reduced +
+  geom_fruit(
+    geom=geom_tile,
+    mapping=aes(fill = source_type),
+    width=0.0005,
+    offset=0.1
+  ) +
+  scale_fill_manual(
+    name="source_ST10CAN",
+    values=testcol,
+    na.translate = FALSE,
+    guide=guide_legend(keywidth=0.3, keyheight=0.3, ncol=2, order=2)
+  ) +
+  theme(
+    legend.title=element_text(size=8), 
+    legend.text=element_text(size=6),
+    legend.spacing.y = unit(0.02, "cm")
+  )
+
+```
+
+
+```{r tree_ST10CAN}
+pST10CAN_5outgr_2
+
+```
+
+## The phylogenetic tree of ST11CAN rooted by 5seq of ST32
+
+
+```{r ST11CAN, include=FALSE}
+# read the tree file and metadata
+rooted_tree_ST11CAN_5outgr <- read.nexus(here::here("data/derived_data/ST11_CAN/rooted_core_tree_ST11CAN_5outgr.treefile"))
+metadata_ST11CAN_5outgr <- read.csv(here::here("data/derived_data/ST11_CAN/metadata_tree_ST11CAN_5outgr.csv"))
+
+all(metadata_ST11CAN_5outgr$assembly_barcode %in% rooted_tree_ST11CAN_5outgr$tip.label)
+
+sourceconvert2 <- function(x, y){  # this function is to create a new var with source of outgr being NA values
+  ifelse(x == 11, y, NA)
+}
+
+metadata_ST11CAN_5outgr <- mutate(metadata_ST11CAN_5outgr,
+                                  source_type2 = sourceconvert2(ST, source_type))
+
+table(metadata_ST11CAN_5outgr$source_type, useNA = "always")
+table(metadata_ST11CAN_5outgr$source_type2, useNA = "always")
+
+pST11CAN_5outgr <- ggtree(rooted_tree_ST11CAN_5outgr, layout="fan", open.angle=5, size=0.1)
+pST11CAN_5outgr <- pST11CAN_5outgr %<+% metadata_ST11CAN_5outgr
+
+testcol <- c("Avian"="#66C2A5", "Canine"="#8DA0CB", "Swine"="#E78AC3", "Poultry"="#A6D854", "Human"="#FFD92F", "Water/River"="#E5C494", "Bovine"="#FC8D62")
+
+pST11CAN_5outgr_1 <- pST11CAN_5outgr +
+  geom_fruit(
+    geom=geom_tile,
+    mapping=aes(fill = source_type2),
+    width=0.0009,
+    offset=0.1
+  ) +
+  scale_fill_manual(
+    name="source_ST11CAN",
+    values=testcol,
+    na.translate = FALSE,
+    guide=guide_legend(keywidth=0.3, keyheight=0.3, ncol=2, order=2)
+  ) +
+  theme(
+    legend.title=element_text(size=8), 
+    legend.text=element_text(size=6),
+    legend.spacing.y = unit(0.02, "cm")
+  )
+
+# remove the outgroup from the tree for visualization 
+to_drop_ST11CAN <- (filter(metadata_ST11CAN_5outgr, is.na(source_type2)))$assembly_barcode
+rooted_tree_ST11CAN_5outgr_reduced <- drop.tip(rooted_tree_ST11CAN_5outgr, to_drop_ST11CAN)
+metadata_ST11CAN <- read.csv(here::here("data/derived_data/ST11_CAN/metadata_tree_ST11CAN.csv"))
+all(metadata_ST11CAN$assembly_barcode %in% rooted_tree_ST11CAN_5outgr_reduced$tip.label)
+
+pST11CAN_5outgr_reduced <- ggtree(rooted_tree_ST11CAN_5outgr_reduced, layout="fan", open.angle=5, size=0.1)
+pST11CAN_5outgr_reduced <- pST11CAN_5outgr_reduced %<+% metadata_ST11CAN
+
+pST11CAN_5outgr_2 <- pST11CAN_5outgr_reduced +
+  geom_fruit(
+    geom=geom_tile,
+    mapping=aes(fill = source_type),
+    width=0.00005,
+    offset=0.1
+  ) +
+  scale_fill_manual(
+    name="source_ST11CAN",
+    values=testcol,
+    na.translate = FALSE,
+    guide=guide_legend(keywidth=0.3, keyheight=0.3, ncol=2, order=2)
+  ) +
+  theme(
+    legend.title=element_text(size=8), 
+    legend.text=element_text(size=6),
+    legend.spacing.y = unit(0.02, "cm")
+  )
+
+```
+
+```{r tree_ST11CAN}
+pST11CAN_5outgr_2
+
+```
+
+## The phylogenetic tree of ST11NEWZ rooted by 5seq of ST32
+
+```{r ST11NEWZ, include=FALSE}
+# read the tree file and metadata
+
+rooted_tree_ST11NEWZ_5outgr <- read.nexus(here::here("data/derived_data/ST11_NEWZ/rooted_core_tree_ST11NEWZ_5outgr.treefile"))
+metadata_ST11NEWZ_5outgr <- read.csv(here::here("data/derived_data/ST11_NEWZ/metadata_tree_ST11NEWZ_5outgr.csv"))
+
+all(metadata_ST11NEWZ_5outgr$assembly_barcode %in% rooted_tree_ST11NEWZ_5outgr$tip.label)
+
+sourceconvert2 <- function(x, y){  # this function is to create a new var with source of outgr being NA values
+  ifelse(x == 11, y, NA)
+}
+
+metadata_ST11NEWZ_5outgr <- mutate(metadata_ST11NEWZ_5outgr,
+                                   source_type2 = sourceconvert2(ST, source_type))
+table(metadata_ST11NEWZ_5outgr$source_type, useNA = "always")
+table(metadata_ST11NEWZ_5outgr$source_type2, useNA = "always")
+
+pST11NEWZ_5outgr <- ggtree(rooted_tree_ST11NEWZ_5outgr, layout="fan", open.angle=5, size=0.1)
+pST11NEWZ_5outgr <- pST11NEWZ_5outgr %<+% metadata_ST11NEWZ_5outgr
+
+pST11NEWZ_5outgr_1 <- pST11NEWZ_5outgr +
+  geom_fruit(
+    geom=geom_tile,
+    mapping=aes(fill = source_type2),
+    width=0.0009,
+    offset=0.1
+  ) +
+  scale_fill_manual(
+    name="source_ST11NEWZ",
+    values=testcol,
+    na.translate = FALSE,
+    guide=guide_legend(keywidth=0.3, keyheight=0.3, ncol=2, order=2)
+  ) +
+  theme(
+    legend.title=element_text(size=8), 
+    legend.text=element_text(size=6),
+    legend.spacing.y = unit(0.02, "cm")
+  )
+
+# remove the outgroup from the tree for visualization 
+to_drop_ST11NEWZ <- (filter(metadata_ST11NEWZ_5outgr, is.na(source_type2)))$assembly_barcode
+rooted_tree_ST11NEWZ_5outgr_reduced <- drop.tip(rooted_tree_ST11NEWZ_5outgr, to_drop_ST11NEWZ)
+metadata_ST11NEWZ <- read.csv(here::here("data/derived_data/ST11_NEWZ/metadata_tree_ST11NEWZ.csv"))
+all(metadata_ST11NEWZ$assembly_barcode %in% rooted_tree_ST11NEWZ_5outgr_reduced$tip.label)
+
+pST11NEWZ_5outgr_reduced <- ggtree(rooted_tree_ST11NEWZ_5outgr_reduced, layout="fan", open.angle=5, size=0.1)
+pST11NEWZ_5outgr_reduced <- pST11NEWZ_5outgr_reduced %<+% metadata_ST11NEWZ
+
+pST11NEWZ_5outgr_2 <- pST11NEWZ_5outgr_reduced +
+  geom_fruit(
+    geom=geom_tile,
+    mapping=aes(fill = source_type),
+    width=0.00002,
+    offset=0.1
+  ) +
+  scale_fill_manual(
+    name="source_ST11NEWZ",
+    values=testcol,
+    na.translate = FALSE,
+    guide=guide_legend(keywidth=0.3, keyheight=0.3, ncol=2, order=2)
+  ) +
+  theme(
+    legend.title=element_text(size=8), 
+    legend.text=element_text(size=6),
+    legend.spacing.y = unit(0.02, "cm")
+  )
+
+```
+
+
+```{r tree_ST11NEWZ}
+pST11NEWZ_5outgr_2
+
+```
+
+## The phylogenetic tree of ST131SPA rooted by 5seq of ST95
+
+```{r ST131SPA, include=FALSE}
+# read tree file and metadata (note to check the match btw the metadata and the tip labels on trees)
+
+rooted_tree_ST131SPA_5outgr <- read.nexus(here::here("data/derived_data/ST131_SPA/rooted_core_tree_ST131SPA_5outgrST95.treefile"))
+metadata_ST131SPA_5outgr <- read.csv(here::here("data/derived_data/ST131_SPA/metadata_tree_ST131SPA_5outgr.csv"))
+
+all(metadata_ST131SPA_5outgr$assembly_barcode %in% rooted_tree_ST131SPA_5outgr$tip.label)
+
+sourceconvert <- function(x, y){  # this function is to create a new var with source of outgr being NA values
+  ifelse(x == 131, y, NA)
+}
+ 
+metadata_ST131SPA_5outgr <- mutate(metadata_ST131SPA_5outgr,
+                                   source_type2 = sourceconvert(ST, source_type))
+
+table(metadata_ST131SPA_5outgr$source_type, useNA = "always")
+table(metadata_ST131SPA_5outgr$source_type2, useNA = "always")
+
+pST131SPA_5outgr <- ggtree(rooted_tree_ST131SPA_5outgr, layout="fan", open.angle=5, size=0.1)
+pST131SPA_5outgr <- pST131SPA_5outgr %<+% metadata_ST131SPA_5outgr
+
+pST131SPA_5outgr_1 <- pST131SPA_5outgr +
+  geom_fruit(
+    geom=geom_tile,
+    mapping=aes(fill = source_type2),
+    width=0.0009,
+    offset=0.1
+  ) +
+  scale_fill_manual(
+    name="source_ST131SPA",
+    values=testcol,
+    na.translate = FALSE,
+    guide=guide_legend(keywidth=0.3, keyheight=0.3, ncol=2, order=2)
+  ) +
+  theme(
+    legend.title=element_text(size=8), 
+    legend.text=element_text(size=6),
+    legend.spacing.y = unit(0.02, "cm")
+  )
+
+# remove the outgroup from the tree for visualization 
+to_drop_ST131SPA <- (filter(metadata_ST131SPA_5outgr, is.na(source_type2)))$assembly_barcode
+metadata_ST131SPA <- read.csv(here::here("data/derived_data/ST131_SPA/metadata_tree_ST131SPA.csv"))
+
+rooted_tree_ST131SPA_5outgr_reduced <- drop.tip(rooted_tree_ST131SPA_5outgr, to_drop_ST131SPA)
+all(metadata_ST131SPA$assembly_barcode %in% rooted_tree_ST131SPA_5outgr_reduced$tip.label)
+
+pST131SPA_5outgr_reduced <- ggtree(rooted_tree_ST131SPA_5outgr_reduced, layout="fan", open.angle=5, size=0.1)
+pST131SPA_5outgr_reduced <- pST131SPA_5outgr_reduced %<+% metadata_ST131SPA
+
+pST131SPA_5outgr_2 <- pST131SPA_5outgr_reduced +
+  geom_fruit(
+    geom=geom_tile,
+    mapping=aes(fill = source_type),
+    width=0.0002,
+    offset=0.1
+  ) +
+  scale_fill_manual(
+    name="source_ST131SPA",
+    values=testcol,
+    na.translate = FALSE,
+    guide=guide_legend(keywidth=0.3, keyheight=0.3, ncol=2, order=2)
+  ) +
+  theme(
+    legend.title=element_text(size=8), 
+    legend.text=element_text(size=6),
+    legend.spacing.y = unit(0.02, "cm")
+  )
+  
+```
+
+```{r tree_ST131SPA}
+pST131SPA_5outgr_2
+
+```
+
+## The phylogenetic tree of ST131US rooted by 5 seq of ST95
+
+```{r ST131US, include=FALSE}
+# read tree file and metadata 
+
+rooted_tree_ST131US_5outgr <- read.nexus(here::here("data/derived_data/ST131_US/rooted_tree_ST131US_5outgr.treefile"))
+metadata_ST131US_5outgr <- read.csv(here::here("data/derived_data/ST131_US/metadata_tree_ST131US_5outgr.csv"))
+
+all(metadata_ST131US_5outgr$assembly_barcode %in% rooted_tree_ST131US_5outgr$tip.label )
+
+sourceconvert <- function(x, y){  # this function is to create a new var with source of outgr being NA values
+  ifelse(x == 131, y, NA)
+}
+
+metadata_ST131US_5outgr <- mutate(metadata_ST131US_5outgr,
+                                  source_type2 = sourceconvert(ST, source_type))
+
+table(metadata_ST131US_5outgr$source_type, useNA = "always")
+table(metadata_ST131US_5outgr$source_type2, useNA = "always")
+
+pST131US_5outgr <- ggtree(rooted_tree_ST131US_5outgr, layout="fan", open.angle=5, size=0.1)
+pST131US_5outgr <- pST131US_5outgr %<+% metadata_ST131US_5outgr
+
+pST131US_5outgr_1 <- pST131US_5outgr +
+  geom_fruit(
+    geom=geom_tile,
+    mapping=aes(fill = source_type2),
+    width=0.0009,
+    offset=0.1
+  ) +
+  scale_fill_manual(
+    name="source_ST131US",
+    values=testcol,
+    na.translate = FALSE,
+    guide=guide_legend(keywidth=0.3, keyheight=0.3, ncol=2, order=2)
+  ) +
+  theme(
+    legend.title=element_text(size=8), 
+    legend.text=element_text(size=6),
+    legend.spacing.y = unit(0.02, "cm")
+  )
+
+# remove the outgroup from the tree for visualization 
+
+to_drop_ST131US <- (filter(metadata_ST131US_5outgr, is.na(source_type2)))$assembly_barcode
+rooted_tree_ST131US_5outgr_reduced <- drop.tip(rooted_tree_ST131US_5outgr, to_drop_ST131US)
+metadata_ST131US <- read.csv(here::here("data/derived_data/ST131_US/metadata_tree_ST131US.csv"))
+
+all(metadata_ST131US$assembly_barcode %in% rooted_tree_ST131US_5outgr_reduced$tip.label )
+
+pST131US_5outgr_reduced <- ggtree(rooted_tree_ST131US_5outgr_reduced, layout="fan", open.angle=5, size=0.1)
+pST131US_5outgr_reduced <- pST131US_5outgr_reduced %<+% metadata_ST131US
+
+pST131US_5outgr_2 <- pST131US_5outgr_reduced +
+  geom_fruit(
+    geom=geom_tile,
+    mapping=aes(fill = source_type),
+    width=0.0002,
+    offset=0.1
+  ) +
+  scale_fill_manual(
+    name="source_ST131US",
+    values=testcol,
+    na.translate = FALSE,
+    guide=guide_legend(keywidth=0.3, keyheight=0.3, ncol=2, order=2)
+  ) +
+  theme(
+    legend.title=element_text(size=8), 
+    legend.text=element_text(size=6),
+    legend.spacing.y = unit(0.02, "cm")
+  )
+
+```
+
+
+```{r tree_ST131US}
+
+pST131US_5outgr_2
+
+```
+

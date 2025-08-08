@@ -1,0 +1,4 @@
+load("/Users/nhung/Phylogeography/E. coli_phylogeography/E. coli.RData")
+load("/Users/nhung/Phylogeography/E. coli_phylogeography/Untitled.RData")
+load("/Users/nhung/Phylogeography/E. coli_phylogeography/Ecoli.RData")
+load("/Users/nhung/Phylogeography/Ecoli_phylo/Untitled.RData")
