@@ -29,9 +29,8 @@ metadata_ST10AUS_5outgr <- read.csv(here::here("data/derived_data/ST10_AUS/metad
 
 all(metadata_ST10AUS_5outgr$assembly_barcode %in% rooted_tree_ST10AUS_5outgr$tip.label)
 
-sourceconvert3 <- function(x, y){  # this function is to create a new var with source of outgr being NA values
-  ifelse(x == 10, y, NA)
-}
+# this function is to create a new var with source of outgr being NA values
+source(here::here("scripts/convert_sourcetype3.R")) 
 
 metadata_ST10AUS_5outgr <- mutate(metadata_ST10AUS_5outgr,
                                   source_type2 = sourceconvert3(ST, source_type))
